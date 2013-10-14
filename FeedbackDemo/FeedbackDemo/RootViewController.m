@@ -48,6 +48,7 @@ enum kRootTableSections {
 	[super viewDidLoad];
     
     tags = [[NSSet alloc] initWithObjects:@"testsurvey", @"testtag", nil];
+    tags = [[NSSet alloc] initWithObjects:@"demoTag", nil];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(surveyBecameAvailable:) name:ATSurveyNewSurveyAvailableNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unreadMessageCountChanged:) name:ATMessageCenterUnreadCountChangedNotification object:nil];
@@ -149,6 +150,7 @@ enum kRootTableSections {
             }
             NSArray *tagArray = [tags allObjects];
             cell.detailTextLabel.text = [NSString stringWithFormat:@"tags: %@", [tagArray componentsJoinedByString:@", "]];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"(Custom Tag: %@)", [tagArray componentsJoinedByString:@", "]];
         }
 	} else if (indexPath.section == kMessageCenterSection) {
 		if (indexPath.row == 0) {
