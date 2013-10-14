@@ -278,7 +278,7 @@ static CFAbsoluteTime ratingsLoadTime = 0.0;
 
 #if TARGET_OS_IPHONE
 - (void)showUnableToOpenAppStoreDialog {
-	UIAlertView *errorAlert = [[[UIAlertView alloc] initWithTitle:ATLocalizedString(@"Oops!", @"Unable to load the App Store title") message:ATLocalizedString(@"Unable to load the App Store", @"Unable to load the App Store message") delegate:nil cancelButtonTitle:ATLocalizedString(@"OK", @"OK button title") otherButtonTitles:nil] autorelease];
+	UIAlertView *errorAlert = [[[UIAlertView alloc] initWithTitle:ATLocalizedString(@"Thank You!", @"Unable to load the App Store") message:ATLocalizedString(@"If this were a live app, your customers would be redirected to the app store.", @"Unable to load the App Store message") delegate:nil cancelButtonTitle:ATLocalizedString(@"OK", @"OK button title") otherButtonTitles:nil] autorelease];
 	[errorAlert show];
 	[self setRatedApp:NO];
 }
